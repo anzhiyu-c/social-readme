@@ -8,6 +8,8 @@ import social
 REPOSITORY = os.getenv('INPUT_REPOSITORY')
 GHTOKEN = os.getenv('INPUT_GH_TOKEN')
 
+COMMIT_MESSAGE = os.getenv("INPUT_COMMIT_MESSAGE")
+
 BLOG_RSS_LINK = os.getenv('INPUT_BLOG_RSS_LINK')
 BLOG_LIMIT = int(os.getenv('INPUT_BLOG_LIMIT'))
 
@@ -47,6 +49,6 @@ if __name__ == "__main__":
     if new_readme != old_readme:
         print(new_readme)
         print("readme Edited, start update...")
-        repo.update_file(path=contents.path, message="commit_message",
+        repo.update_file(path=contents.path, message=COMMIT_MESSAGE,
                          content=new_readme, sha=contents.sha)
         print("your readme update completed!")

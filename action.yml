@@ -13,6 +13,11 @@ inputs:
     default: ${{ github.repository }}
     required: false
 
+  COMMIT_MESSAGE:
+    description:  "COMMIT_MESSAGE"
+    default: "Updated social rss by social-readme"
+    required: false
+
   BLOG_RSS_LINK:
     description: "Your Blog rss link"
     required: false

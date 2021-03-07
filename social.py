@@ -11,7 +11,7 @@ DOUBAN_END_COMMENT = '<!-- END_SECTION:douban -->'
 
 
 def generate_blog(rss_link, limit, readme) -> str:
-
+    """Generate blog"""
     entries = feedparser.parse(rss_link)["entries"]
     arr = [
         {
@@ -30,6 +30,7 @@ def generate_blog(rss_link, limit, readme) -> str:
 
 
 def generate_douban(username, limit, readme) -> str:
+    """Generate douban"""
     entries = feedparser.parse("https://www.douban.com/feed/people/" + username + "/interests")["entries"]
     arr = [
         {
@@ -58,4 +59,3 @@ def format_time(timestamp) -> datetime:
     gmt_format = '%a, %d %b %Y %H:%M:%S GMT'
     date_str = datetime.datetime.strptime(timestamp, gmt_format) + datetime.timedelta(hours=8)
     return date_str.date()
-
