@@ -3,7 +3,7 @@ import os
 import sys
 from github import Github, GithubException
 
-sys.path.append(os.getcwd())
+sys.path.append('/')
 from social import douban, blog # noqa
 
 REPOSITORY = os.getenv('INPUT_REPOSITORY')
