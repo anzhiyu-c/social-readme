@@ -46,8 +46,10 @@ if __name__ == "__main__":
         print("DOUBAN_LIMIT:" + str(DOUBAN_LIMIT))
         new_readme = social.generate_douban(DOUBAN_NAME, DOUBAN_LIMIT, new_readme)
 
-    if new_readme != old_readme:
-        print("readme Edited, start update...")
+    if new_readme == old_readme:
+        print("nothing changed")
+    else:
+        print("readme change, start update...")
         repo.update_file(path=contents.path, message=COMMIT_MESSAGE,
                          content=new_readme, sha=contents.sha)
         print("your readme update completed!")
