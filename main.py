@@ -3,8 +3,7 @@ import os
 import sys
 from github import Github, GithubException
 
-sys.path.append('/')
-from social import douban, blog # noqa
+import social
 
 REPOSITORY = os.getenv('INPUT_REPOSITORY')
 GHTOKEN = os.getenv('INPUT_GH_TOKEN')
@@ -38,14 +37,15 @@ if __name__ == "__main__":
     if BLOG_RSS_LINK is not None and BLOG_LIMIT > 0:
         print("BLOG_RSS_LINK:" + BLOG_RSS_LINK)
         print("BLOG_LIMIT:" + str(BLOG_LIMIT))
-        new_readme = blog.generate(BLOG_RSS_LINK, BLOG_LIMIT, new_readme)
+        new_readme = social.generate_blog(BLOG_RSS_LINK, BLOG_LIMIT, new_readme)
 
     if DOUBAN_NAME is not None and DOUBAN_LIMIT > 0:
         print("DOUBAN_NAME:" + DOUBAN_NAME)
         print("DOUBAN_LIMIT:" + str(DOUBAN_LIMIT))
-        new_readme = douban.generate(DOUBAN_NAME, DOUBAN_LIMIT, new_readme)
+        new_readme = social.generate_douban(DOUBAN_NAME, DOUBAN_LIMIT, new_readme)
 
     if new_readme != old_readme:
+        print(new_readme)
         print("readme Edited, start update...")
         repo.update_file(path=contents.path, message="commit_message",
                          content=new_readme, sha=contents.sha)

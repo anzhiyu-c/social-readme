@@ -6,6 +6,5 @@ RUN pip install -r requirements.txt
 
 # Copy code.
 ADD main.py /main.py
-ADD social social/
 
 CMD ["python", "/main.py"]
