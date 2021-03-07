@@ -52,9 +52,8 @@ def generate_new_readme(start_comment: str, end_comment: str, content: str, read
     """Generate a new Readme.md"""
     pattern = f"{start_comment}[\\s\\S]+{end_comment}"
     repl = f"{start_comment}\n{content}\n{end_comment}"
-
-    if re.match(pattern, readme) is None:
-        print(f"can not find section in your readme, please check it, it shoud be {start_comment} and {end_comment}")
+    if re.search(pattern, readme) is None:
+        print(f"can not find section in your readme, please check it, it should be {start_comment} and {end_comment}")
 
     return re.sub(pattern, repl, readme)
 

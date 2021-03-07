@@ -35,7 +35,6 @@ if __name__ == "__main__":
 
     old_readme = decode_readme(contents.content)
     new_readme = old_readme
-    print(old_readme)
 
     if BLOG_RSS_LINK is not None and BLOG_LIMIT > 0:
         print("BLOG_RSS_LINK:" + BLOG_RSS_LINK)
@@ -47,9 +46,7 @@ if __name__ == "__main__":
         print("DOUBAN_LIMIT:" + str(DOUBAN_LIMIT))
         new_readme = social.generate_douban(DOUBAN_NAME, DOUBAN_LIMIT, new_readme)
 
-    print(new_readme)
     if new_readme != old_readme:
-        print(new_readme)
         print("readme Edited, start update...")
         repo.update_file(path=contents.path, message=COMMIT_MESSAGE,
                          content=new_readme, sha=contents.sha)
