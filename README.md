@@ -1,13 +1,14 @@
 # social-readme
 
 Social feeds in your repo's Readme
+
 在你的项目readme中自动构建社交feed流
 
-![image](https://user-images.githubusercontent.com/12383106/110249104-67a80100-7faf-11eb-8a67-7222cf27cd55.png)
+![image](https://user-images.githubusercontent.com/12383106/110250943-18ff6480-7fb9-11eb-8f27-daa027a3c3f1.png)
 
 ## 目前支持
 
-- Atom标准文档格式，比如 [我的博客](https://zylele.github.io/) （atom链接是https://zylele.github.io/atom.xml）
+- Atom标准文档格式，比如 [我的博客](https://zylele.github.io/) atom链接是https://zylele.github.io/atom.xml
 - 豆瓣（想看、在看和看过的书和电影，想听、在听和听过的音乐）
 
 ## 更新你的项目readme
