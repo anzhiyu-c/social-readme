@@ -26,7 +26,8 @@ if __name__ == "__main__":
     try:
         repo = g.get_repo(REPOSITORY)
     except GithubException:
-        print("Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token, which is automatically used by the action.")
+        print(
+            "Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token, which is automatically used by the action.")
         sys.exit(1)
     contents = repo.get_readme()
 
