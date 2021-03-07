@@ -15,7 +15,8 @@ def generate_blog(rss_link, limit, readme) -> str:
     entries = feedparser.parse(rss_link)["entries"]
     arr = [
         {
-            "title": (entry["title"][0:20] + "...") if(len(entry["title"]) > 22) else entry["title"],
+            # "title": (entry["title"][0:20] + "...") if(len(entry["title"]) > 22) else entry["title"],
+            "title": entry["title"],
             "url": entry["link"].split("#")[0],
             "published": entry["published"].split("T")[0],
         }
