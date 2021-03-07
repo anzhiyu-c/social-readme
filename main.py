@@ -3,7 +3,8 @@ import os
 import sys
 from github import Github, GithubException
 
-from social import douban, blog
+sys.path.append('social')
+from social import douban, blog # noqa
 
 REPOSITORY = os.getenv('INPUT_REPOSITORY')
 GHTOKEN = os.getenv('INPUT_GH_TOKEN')
