@@ -1,8 +1,8 @@
 # social-readme
 
-Social feeds in your repo's Readme
+Automatically build Social feeds in your Readme everyday or manual trigger
 
-在你的项目readme中自动构建社交feed流
+每天自动构建社交feed到你的readme中，或手动触发
 
 ![image](https://user-images.githubusercontent.com/12383106/110250943-18ff6480-7fb9-11eb-8f27-daa027a3c3f1.png)
 
