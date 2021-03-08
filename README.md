@@ -36,7 +36,7 @@ _如果你在Profile Repository上构建workflow_
 
 - 在你项目的根目录，新建`.github/workflows/social-readme.yml`，或者编辑其他已有的workflow文件
 
-- 拷贝以下代码到上一步的文件中，根据你的需要，选填博客atom链接`BLOG_RSS_LINK`，豆瓣用户名`DOUBAN_NAME`（豆瓣个人主页地址可以看到douban.com/people/username/）
+- 拷贝以下代码到上一步的文件中，根据你的需要，选填博客atom链接`blog_rss_link`，豆瓣用户名`douban_name`（豆瓣个人主页地址可以看到douban.com/people/username/）
 
 ```yml
 name: Social Readme
@@ -55,8 +55,8 @@ jobs:
     steps:
       - uses: zylele/social-readme@master
         with:
-          BLOG_RSS_LINK: your blog rss link
-          DOUBAN_NAME: your douban username
+          blog_rss_link: your blog rss link
+          douban_name: your douban username
 ```
 
 ## 其他仓库（not `<username>/<username>`）
@@ -84,9 +84,10 @@ jobs:
     steps:
       - uses: zylele/social-readme@master
         with:
-          BLOG_RSS_LINK: your blog rss link
-          DOUBAN_NAME: your douban username
-          REPOSITORY: <username/reponame> #可选，默认将会自动使用执行workflow的存储库
+          blog_rss_link: your blog rss link
+          douban_name: your douban username
+          gh_token: ${{ secrets.GH_TOKEN }}
+          repository: <username/reponame> #可选，默认将会自动使用执行workflow的存储库
 ```
 
 ## 可选配置
@@ -96,10 +97,10 @@ jobs:
 ```yml
 - uses: zylele/social-readme@master
   with:
-    BLOG_RSS_LINK: your blog rss link
-    BLOG_LIMIT: 5 # blog数量
-    DOUBAN_NAME: your douban username
-    DOUBAN_LIMIT: 5 # 豆瓣最新动态数量
-    COMMIT_MESSAGE: Updated social rss by social-readme # commit说明
+    blog_rss_link: your blog rss link
+    blog_limit: 5 # blog数量
+    douban_name: your douban username
+    douban_limit: 5 # 豆瓣最新动态数量
+    commit_message: Updated social rss by social-readme # commit说明
 ```
 
